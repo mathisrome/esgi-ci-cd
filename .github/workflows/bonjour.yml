@@ -17,5 +17,6 @@ jobs:
       image: gitpod/workspace-node-22
       options: --user root
     steps:
+      - uses: actions/checkout@v4 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
       - run: npm install
       - run: npm run lint
