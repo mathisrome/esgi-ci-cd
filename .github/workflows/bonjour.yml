@@ -14,8 +14,10 @@ jobs:
   container_test_job:
     runs-on: ubuntu-22.04
     container:
-      image: ubuntu:22.04
+      image: gitpod/workspace-node-22
     steps:
-      - run: apt-get update && apt-get install --yes --no-install-recommends node
+      - uses: actions/setup-node@v4
+        with:
+            node-version: 23
       - run: npm install
       - run: npm run lint
