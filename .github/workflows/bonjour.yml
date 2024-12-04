@@ -11,3 +11,11 @@ jobs:
           node-version: 23
       - run: npm install
       - run: npm run lint
+  container_test_job:
+    runs-on: ubuntu-22.04
+    container:
+      image: ubuntu:22.04
+    steps:
+      - run: apt-get update && apt-get install --yes --no-install-recommends node
+      - run: npm install
+      - run: npm run lint
