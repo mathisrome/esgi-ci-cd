@@ -18,4 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
       - run: docker image build --tag="${IMAGE_NAME}" .
-      - run: docker container run --volume=./:/app "${IMAGE_NAME}" ls -la
+      - run: docker container run --volume=./:/app "${IMAGE_NAME}" npm clean-install && npm run lint
