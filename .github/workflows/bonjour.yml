@@ -18,4 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
       - run: docker image build --tag="${IMAGE_NAME}" .
-      - run: docker container run "${IMAGE_NAME}" npm run linst
+      - run: docker container run "${IMAGE_NAME}" npm run lint
