@@ -13,9 +13,8 @@ jobs:
       - run: npm run lint
   container_test_job:
     runs-on: ubuntu-22.04
-    container:
-      image: gitpod/workspace-node-22
-      options: --user root
+    env:
+      IMAGE_NAME: "mynode"
     steps:
       - uses: actions/checkout@v4 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
       - run: docker image build --tag="${IMAGE_NAME}" .
