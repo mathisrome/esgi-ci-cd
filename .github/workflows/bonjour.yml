@@ -36,4 +36,10 @@ jobs:
         with:
           push: true
           tags: mathisrome/sayhello:${{ github.ref_name }}
+      - if: startsWith(github.ref, 'refs/heads/main')
+        name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: mathisrome/sayhello:unstable
       
